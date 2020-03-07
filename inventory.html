@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+     var totalItem, itemPrice, itemPurch, itemLeft, totalSold;
+    function calcData(){
+        totalItem = parseInt(f1.t1.value)
+        itemPrice = parseInt(f1.ip.value)
+        itemPurch = parseInt(f1.ip1.value)
+        itemLeft = totalItem - itemPurch
+        totalSold = itemPurch * itemPrice
+        f1.il.value = itemLeft
+        f1.ts.value = totalSold
+        f1.gtotal.value = totalSold
+         
+    }
+    function calculateValue(){
+        totalItem = parseInt(f1.t2.value)
+        itemPrice = parseInt(f1.ip2.value)
+        itemPurch = parseInt(f1.ip3.value)
+        itemLeft = totalItem - itemPurch
+        totalSold = itemPurch * itemPrice
+        f1.il1.value = itemLeft
+        f1.ts1.value = totalSold
+        f1.gtotal.value = parseInt(f1.ts.value) + totalSold;
+    }
+    function calculateData(){
+        totalItem = parseInt(f1.t3.value)
+        itemPrice = parseInt(f1.ip4.value)
+        itemPurch = parseInt(f1.ip5.value)
+        itemLeft = totalItem - itemPurch
+        totalSold = itemPurch * itemPrice
+        f1.il2.value = itemLeft
+        f1.ts2.value = totalSold
+        f1.gtotal.value = parseInt(f1.ts.value) + parseInt(f1.ts1.value) + parseInt(f1.ts2.value);
+    }
+    function callCalc(){
+        window.open("calculator.html","Calculator", parent,  "toolbar=yes,scrollbar=yes")
+    }
+    </script>
+</head>
+<body>
+    <h1 align = "center">DELIGHT MALL</h1>
+    <form name="f1">
+        <table border="1" align="center">
+            <tr>
+                <td>S/N</td>
+                <td>Item Name</td>
+                <td>Total Item</td>
+                <td>Item Price</td>
+                <td>Item Purchased</td>
+                <td>Item Left</td>
+                <td>Total Sold</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Coffee</td>
+                <td><input type="text" value="400" disabled name="t1"></td>
+                <td><input type="text" value="50" disabled name="ip"></td>
+                <td><input type="text" value="" name="ip1" onkeyup ="calcData()"></td>
+                <td><input type="text" value="" name="il"></td>
+                <td><input type="text" value="" name="ts"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>funbact</td>
+                <td><input type="text" value="50" disabled name="t2"></td>
+                <td><input type="text" value="400" disabled name="ip2"></td>
+                <td><input type="text" value="" name="ip3" onkeyup="calculateValue()"></td>
+                <td><input type="text" value="" name="il1"></td>
+                <td><input type="text" value="" name="ts1"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Bread</td>
+                <td><input type="text" value="80" disabled name="t3"></td>
+                <td><input type="text" value="350" disabled name="ip4"></td>
+                <td><input type="text" value="" name="ip5" onkeyup="calculateData()"></td>
+                <td><input type="text" value="" name="il2"></td>
+                <td><input type="text" value="" name="ts2"></td>
+            </tr>
+            <tr>
+                <td colspan="5"><input type="button" value="USE CALCULATOR" onclick="callCalc()"></td>
+                <td>GRAND TOTAL</td>
+                <td><input type="text" disabled name="gtotal" value="0"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

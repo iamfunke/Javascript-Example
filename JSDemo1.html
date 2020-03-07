@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Demo 1</title>
+    <script type="text/javascript">
+    // Here, I am adding two values
+    var first_num, second_num, total;
+    function addValue(){
+        first_num = parseFloat(f1.fn.value)
+        second_num = parseFloat(f1.sn.value);
+        if(first_num == " " || second_num == " "){
+            alert("Kindly supply values")
+            return;
+        }else{
+        total = first_num + second_num;
+        f1.result.value = "The result is " + total;
+        }
+    }
+
+    // Here, I am subtracting two values
+    function subValue(){
+        first_num = parseFloat(f1.fn.value)
+        second_num = parseFloat(f1.sn.value);
+        total = first_num - second_num;
+        f1.result.value = "The result is " + total; 
+    }
+    // Here, I am multiplying two numbers
+    function multValue(){
+        first_num = parseFloat(f1.fn.value)
+        second_num = parseFloat(f1.sn.value)
+        total = first_num * second_num
+        f1.result.value = "The result is " + total
+    }
+    // Here, I am dividing two numbers
+    function divValue(){
+        first_num = parseFloat(f1.fn.value)
+        second_num = parseFloat(f1.sn.value)
+        total = first_num / second_num
+        f1.result.value = "The result is " + total
+    }
+    
+    </script>
+</head>
+<body>
+    <form name="f1">
+        <table align="center">
+            <tr>
+                <td>First Number</td>
+                <td><input type="text" placeholder="e.g 6" name="fn"></td>
+            </tr>
+            <tr>
+                <td>Second Number</td>
+                <td><input type="text" placeholder="e.g 2" name="sn"></td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <input type="button" value="+" onclick="addValue()">
+                    <input type="button" value="-" onclick="subValue()">
+                    <input type="button" value="*" onclick="multValue()">
+                    <input type="button" value="/" onclick="divValue()"> 
+                </td> 
+            </tr>
+            <tr>
+                <td colspan="5"><input type="text" placeholder="The result is..." size="36" name="result"></td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

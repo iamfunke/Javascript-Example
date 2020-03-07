@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascriptclass</title>
+    <script type="text/javascript">
+var screen, firstnum, secondnum, opr, total;
+function clearValue(){
+    f1.screen.value = "0"
+}
+function getValue(x){
+    if(f1.screen.value == 0){
+        f1.screen.value = "";
+    }
+    f1.screen.value = f1.screen.value + x ;
+}
+function divValue(){
+    firstnum = parseFloat(f1.screen.value);
+    f1.screen.value = ""
+    opr = 'divs'
+}
+function multValue(){
+    firstnum = parseFloat(f1.screen.value);
+    f1.screen.value = ""
+    opr = 'mult'
+}
+    function addValue(){
+    firstnum = parseFloat(f1.screen.value);
+    f1.screen.value =""
+    opr = 'add'
+}
+function subValue(){
+    firstnum = parseFloat(f1.screen.value);
+    f1.screen.value=""
+    opr= 'sub'
+}
+function modValue(){
+firstnum = parseFloat(f1.screen.value)
+f1.screen.value = ""
+opr = 'mod'
+}
+function equalValue(){
+    secondnum = parseFloat(f1.screen.value);
+    if(opr == 'divs'){
+        total = firstnum/secondnum;
+        f1.screen.value = total
+    }else if(opr == 'mult'){
+        total = firstnum*secondnum;
+        f1.screen.value = total
+    }
+    else if(opr == 'add'){
+        total=firstnum+secondnum;
+        f1.screen.value = total
+    }
+    else if(opr =='sub'){
+        total=firstnum-secondnum;
+        f1.screen,value =total
+    }
+    else if (opr == 'mod'){
+    total = firstnum%secondnum
+    f1.screen.value = total
+    }
+    else {
+    f1.screen.value = "invalid operator"
+    }
+}
+    </script>
+</head>
+<body bgcolor="black">
+    <form name="f1">
+        <table align="center" border="1" >>
+            <tr>
+                <td colspan="4"><input type="text" value="0" name="screen"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="C" onclick="clearValue()"></td>
+                <td><input type="button" value="+\-"></td>
+                <td><input type="button" value="%" onclick="modValue()"></td>
+                <td><input type="button" value="/" onclick="divValue()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="getValue(7)"></td>
+                <td><input type="button" value="8" onclick="getValue(8)"></td>
+                <td><input type="button" value="9" onclick="getValue(9)"></td>
+                <td><input type="button" value="*" onclick="multValue()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="getValue(4)"></td>
+                <td><input type="button" value="5"  onclick="getValue(5)"></td>
+                <td><input type="button" value="6" onclick="getValue(6)" ></td>
+                <td><input type="button" value="-" onclick="subValue()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="getValue(1)" ></td>
+                <td><input type="button" value="2" onclick="getValue(2)" ></td>
+                <td><input type="button" value="3" onclick="getValue(3)"></td>
+                <td><input type="button" value="+" onclick="addValue()"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="0" onclick="getValue(0)"  ></td>
+                <td><input type="button" value="." ></td>
+                <td><input type="button" value="=" onclick="equalValue()"></td>
+            </tr>
+           
+        </table>
+    </form>
+</body>
+</html>
